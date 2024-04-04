@@ -1,25 +1,52 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import Navbar from "./component/Navbar";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Home from "./component/Home";
+import About from "./component/About";
+import { DatePicker } from 'antd';
+import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
+import { Menu } from 'antd';
+import { StyleProvider } from '@ant-design/cssinjs';
 import './App.css';
 
-function App() {
+const items = [
+  {
+    label: 'Home',
+    key: 'mail',
+    icon: <MailOutlined />,
+    link: '/'
+  },
+  {
+    label: 'About',
+    key: 'app',
+    icon: <AppstoreOutlined />,
+    link: '/about'
+  },
+];
+const App = () => {
+  const [current, setCurrent] = useState('mail');
+  const onClick = (e) => {
+    console.log('click ', e);
+    setCurrent(e.key);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" className="custom-navbar">
+          {items.map(item => (
+            <Menu.Item key={item.key} icon={item.icon}>
+              <Link to={item.link}>{item.label}</Link>
+            </Menu.Item>
+          ))}
+        </Menu>
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/about" exact component={About} />
+        </Switch>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
