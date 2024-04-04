@@ -13,7 +13,8 @@ const style = {
 };
 
 const contentStyle = {
-    height: '250px',
+    height: '300px',
+    width: '100%',
     color: '#fff',
     lineHeight: '160px',
     textAlign: 'center',

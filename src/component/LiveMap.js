@@ -284,7 +284,7 @@ function LiveMap() {
                     icon={weatherData[district].cloudy ? cloudyIcon : sunnyIcon}
                 >
                     <Popup>
-                        <strong>{district}</strong><br />
+                        <strong>{district}</strong><br /><br /><br />
                         Temperature: {weatherData[district].temperature}°C<br />
                         Humidity: {weatherData[district].humidity}%<br />
                         Air Pressure: {weatherData[district].pressure} hPa<br />

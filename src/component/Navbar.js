@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Home from "./Home";
 import About from "./About";
+import Contact from "./Contact";
 import logo from "../img/logo.png";
 import { Breadcrumb, Layout, Menu, theme } from 'antd';
 import { Button } from "antd";
@@ -23,6 +24,12 @@ const items = [
         key: 'app',
         icon: <AppstoreOutlined />,
         link: '/about'
+    },
+    {
+        label: 'Contact ',
+        key: 'contact',
+        icon: <AppstoreOutlined />,
+        link: '/contact'
     },
 ];
 
@@ -51,17 +58,14 @@ const Navbar = () => {
                     }}
                 >
 
-                    <img src={logo} alt="logo" style={{ width: '380px', marginRight: '480px' }} /> {/* Logo */}
-                    <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" style={{ float: 'right' }}>
+                    <img src={logo} alt="logo" style={{ width: '380px', marginRight: '450px' }} /> {/* Logo */}
+                    <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" >
                         {items.map(item => (
                             <Menu.Item key={item.key} icon={item.icon} >
                                 <Link to={item.link}>{item.label}</Link>
                             </Menu.Item>
                         ))}
                     </Menu>
-                    <Flex gap="small">
-                        <Button danger>Log Out</Button>
-                    </Flex>
                 </Header>
                 <Content
                     style={{
@@ -85,6 +89,7 @@ const Navbar = () => {
                         <Switch>
                             <Route path="/" exact component={Home} />
                             <Route path="/about" exact component={About} />
+                            <Route path="/contact" exact component={Contact} />
                         </Switch>
                     </div>
                 </Content>
