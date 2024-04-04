@@ -2,6 +2,7 @@ import React from "react";
 import { Card } from "antd";
 import { Grid } from "antd";
 import { Col, Divider, Row } from 'antd';
+import { HeatMapOutlined } from '@ant-design/icons';
 import LiveMap from "./LiveMap";
 
 const style = {
@@ -23,7 +24,8 @@ const Home = () => {
                                 marginTop: 20
                             }}
                         >
-                            <p>Test</p>
+                            <p><HeatMapOutlined /> Max. Temperature</p>
+                            <p><HeatMapOutlined /> Min. Temperature</p>
                         </Card>
                     </div>
                 </Col>
@@ -35,21 +37,42 @@ const Home = () => {
                                 marginTop: 20
                             }}
                         >
-                            <p>Test</p>
+                            <p>Max. Humidity</p>
+                            <p>Min. Humidity</p>
                         </Card>
                     </div>
                 </Col>
                 <Col className="gutter-row" span={6}>
-                    <div style={style}>col-6</div>
+                    <div style={style}>
+                        <Card
+                            bordered={false}
+                            style={{
+                                marginTop: 20
+                            }}
+                        >
+                            <p>Max. Air Pressure</p>
+                            <p>Min. Air Pressure</p>
+                        </Card>
+                    </div>
                 </Col>
                 <Col className="gutter-row" span={6}>
-                    <div style={style}>col-6</div>
+                    <div style={style}>
+                        <Card
+                            bordered={false}
+                            style={{
+                                marginTop: 20
+                            }}
+                        >
+                            <p>Max. Temperature</p>
+                            <p>Min. Temperature</p>
+                        </Card>
+                    </div>
                 </Col>
             </Row>
             <Row>
                 <Col span={24}>
                     <Card
-                        title="Live Map"
+                        title="Weather and Climate Data"
                         bordered={false}
                         style={{
                             marginTop: 20

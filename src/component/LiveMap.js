@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
+import sunny from "../img/weather-clear.png";
+import cloudy from "../img/drizzling-fw.png";
 
 import 'leaflet/dist/leaflet.css';
 
@@ -11,6 +13,17 @@ import iconShadow from 'leaflet/dist/images/marker-shadow.png';
 let DefaultIcon = L.icon({
     iconUrl: icon,
     shadowUrl: iconShadow
+});
+
+let cloudyIcon = L.icon({
+    iconUrl: sunny, // Replace 'url_to_cloudy_icon' with the URL of your cloudy icon image
+    shadowUrl: sunny
+});
+
+// Sunny icon
+let sunnyIcon = L.icon({
+    iconUrl: cloudy, // Replace 'url_to_sunny_icon' with the URL of your sunny icon image
+    shadowUrl: cloudy,
 });
 
 // Set the default marker icon
@@ -251,10 +264,24 @@ function LiveMap() {
 
             {/* Loop through weather data and add markers to the map */}
             {Object.keys(weatherData).map((district, index) => (
+                // <Marker
+                //     position={getDistrictCoordinates(district)}
+                //     key={district}
+                //     ref={el => (markerRefs.current[index] = el)}
+                // >
+                //     <Popup>
+                //         <strong>{district}</strong><br />
+                //         Temperature: {weatherData[district].temperature}°C<br />
+                //         Humidity: {weatherData[district].humidity}%<br />
+                //         Air Pressure: {weatherData[district].pressure} hPa<br />
+                //         Cloudy: {weatherData[district].cloudy ? "Yes" : "No"}
+                //     </Popup>
+                // </Marker>
                 <Marker
                     position={getDistrictCoordinates(district)}
                     key={district}
                     ref={el => (markerRefs.current[index] = el)}
+                    icon={weatherData[district].cloudy ? cloudyIcon : sunnyIcon}
                 >
                     <Popup>
                         <strong>{district}</strong><br />
