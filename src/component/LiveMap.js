@@ -16,14 +16,14 @@ let DefaultIcon = L.icon({
 });
 
 let cloudyIcon = L.icon({
-    iconUrl: sunny, // Replace 'url_to_cloudy_icon' with the URL of your cloudy icon image
-    shadowUrl: sunny
+    iconUrl: cloudy, // Replace 'url_to_cloudy_icon' with the URL of your cloudy icon image
+    shadowUrl: cloudy
 });
 
 // Sunny icon
 let sunnyIcon = L.icon({
-    iconUrl: cloudy, // Replace 'url_to_sunny_icon' with the URL of your sunny icon image
-    shadowUrl: cloudy,
+    iconUrl: sunny, // Replace 'url_to_sunny_icon' with the URL of your sunny icon image
+    shadowUrl: sunny,
 });
 
 // Set the default marker icon

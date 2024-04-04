@@ -16,7 +16,7 @@ const Home = () => {
         <>
             {/* <Divider orientation="left">Horizontal</Divider> */}
             <Row gutter={16}>
-                <Col className="gutter-row" span={6}>
+                <Col className="gutter-row" span={8}>
                     <div style={style}>
                         <Card
                             bordered={false}
@@ -24,12 +24,23 @@ const Home = () => {
                                 marginTop: 20
                             }}
                         >
-                            <p><HeatMapOutlined /> Max. Temperature</p>
-                            <p><HeatMapOutlined /> Min. Temperature</p>
+                            <h3 style={{ marginBottom: '20px' }}>Temperature</h3>
+                            <Row gutter={16}>
+                                <Col className="gutter-row" span={8}>Max</Col>
+                                <Col className="gutter-row" span={8}><span style={{ float: 'center' }}>Kurunagala</span></Col>
+                                <Col className="gutter-row" span={8}> <span style={{ float: 'right' }}>34°C</span></Col>
+                            </Row>
+                            <Row gutter={16}>
+                                <Col className="gutter-row" span={8}>Min</Col>
+                                <Col className="gutter-row" span={8}><span style={{ float: 'center' }}>Nuwara Eliya</span></Col>
+                                <Col className="gutter-row" span={8}> <span style={{ float: 'right' }}>20°C</span></Col>
+                            </Row>
+                            {/* <p><HeatMapOutlined /> Max. Temperature</p>
+                            <p><HeatMapOutlined /> Min. Temperature</p> */}
                         </Card>
                     </div>
                 </Col>
-                <Col className="gutter-row" span={6}>
+                <Col className="gutter-row" span={8}>
                     <div style={style}>
                         <Card
                             bordered={false}
@@ -37,12 +48,22 @@ const Home = () => {
                                 marginTop: 20
                             }}
                         >
-                            <p>Max. Humidity</p>
-                            <p>Min. Humidity</p>
+                            <h3 style={{ marginBottom: '20px' }}>Humidity</h3>
+                            <Row gutter={16}>
+                                <Col className="gutter-row" span={8}>Max</Col>
+                                <Col className="gutter-row" span={8}><span style={{ float: 'center' }}>Kurunagala</span></Col>
+                                <Col className="gutter-row" span={8}> <span style={{ float: 'right' }}>70%</span></Col>
+                            </Row>
+                            <Row gutter={16}>
+                                <Col className="gutter-row" span={8}>Min</Col>
+                                <Col className="gutter-row" span={8}><span style={{ float: 'center' }}>Nuwara Eliya</span></Col>
+                                <Col className="gutter-row" span={8}> <span style={{ float: 'right' }}>20%</span></Col>
+                            </Row>
+
                         </Card>
                     </div>
                 </Col>
-                <Col className="gutter-row" span={6}>
+                <Col className="gutter-row" span={8}>
                     <div style={style}>
                         <Card
                             bordered={false}
@@ -50,21 +71,18 @@ const Home = () => {
                                 marginTop: 20
                             }}
                         >
-                            <p>Max. Air Pressure</p>
-                            <p>Min. Air Pressure</p>
-                        </Card>
-                    </div>
-                </Col>
-                <Col className="gutter-row" span={6}>
-                    <div style={style}>
-                        <Card
-                            bordered={false}
-                            style={{
-                                marginTop: 20
-                            }}
-                        >
-                            <p>Max. Temperature</p>
-                            <p>Min. Temperature</p>
+                            <h3 style={{ marginBottom: '20px' }}>Air Pressure</h3>
+                            <Row gutter={16}>
+                                <Col className="gutter-row" span={8}>Max</Col>
+                                <Col className="gutter-row" span={8}><span style={{ float: 'center' }}>Kurunagala</span></Col>
+                                <Col className="gutter-row" span={8}> <span style={{ float: 'right' }}>1000 hPa</span></Col>
+                            </Row>
+                            <Row gutter={16}>
+                                <Col className="gutter-row" span={8}>Min</Col>
+                                <Col className="gutter-row" span={8}><span style={{ float: 'center' }}>Nuwara Eliya</span></Col>
+                                <Col className="gutter-row" span={8}> <span style={{ float: 'right' }}>800hPa</span></Col>
+                            </Row>
+
                         </Card>
                     </div>
                 </Col>
