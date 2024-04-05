@@ -2,7 +2,7 @@ import React from "react";
 import { Col, Divider, Row } from 'antd';
 import { Card } from "antd";
 import { Carousel } from "antd";
-import company1 from '../img/company1.jpg'
+import contact from '../img/Contact-Us-Page-Examples.jpg'
 import company2 from '../img/company2.jpg'
 import company3 from '../img/company3.jpg'
 import company4 from '../img/company4.jpg'
@@ -77,7 +77,9 @@ const Contact = () => {
 
                     </Card>
                 </Col>
-                <Col className="gutter-row" span={12}>1</Col>
+                <Col className="gutter-row" span={12}>
+                    <img src={contact} alt="logo" style={{ width: '100%', height: '100%' }} /> {/* Logo */}
+                </Col>
             </Row>
         </section>
 

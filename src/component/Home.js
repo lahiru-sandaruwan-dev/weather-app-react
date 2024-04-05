@@ -15,7 +15,7 @@ const Home = () => {
     return (
         <>
             {/* <Divider orientation="left">Horizontal</Divider> */}
-            <Row gutter={16}>
+            {/* <Row gutter={16}>
                 <Col className="gutter-row" span={8}>
                     <div style={style}>
                         <Card
@@ -35,8 +35,6 @@ const Home = () => {
                                 <Col className="gutter-row" span={8}><span style={{ float: 'center' }}>Nuwara Eliya</span></Col>
                                 <Col className="gutter-row" span={8}> <span style={{ float: 'right' }}>20°C</span></Col>
                             </Row>
-                            {/* <p><HeatMapOutlined /> Max. Temperature</p>
-                            <p><HeatMapOutlined /> Min. Temperature</p> */}
                         </Card>
                     </div>
                 </Col>
@@ -86,14 +84,18 @@ const Home = () => {
                         </Card>
                     </div>
                 </Col>
-            </Row>
+            </Row> */}
+
+            <Divider style={{
+                textAlign: 'center',
+            }}>Weather and Climate Data</Divider>
             <Row>
                 <Col span={24}>
                     <Card
-                        title="Weather and Climate Data"
+                        // title="Weather and Climate Data"
                         bordered={false}
                         style={{
-                            marginTop: 20
+                            // marginTop: 5
                         }}
                     >
                         <LiveMap />
