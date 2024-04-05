@@ -105,7 +105,7 @@ const Navbar = () => {
                         backgroundColor: 'white',
                         color: 'white'
                     }}></Divider> */}
-                    @ Department of Meteorology - Sri Lanka. All Rights Reserved.{new Date().getFullYear()}
+                    @Department of Meteorology - Sri Lanka. All Rights Reserved.{new Date().getFullYear()}
                 </Footer>
             </Layout>
         </Router>
