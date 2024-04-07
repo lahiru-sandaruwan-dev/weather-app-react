@@ -57,15 +57,17 @@ const Navbar = () => {
                         boxShadow: '0px 2px 4px rgba(0,0,0,0.1)'
                     }}
                 >
+                    <Flex style={{ justifyContent: 'space-between' }}>
+                        <img src={logo} alt="logo" style={{ width: '380px', marginRight: '550px' }} /> {/* Logo */}
+                        <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" >
+                            {items.map(item => (
+                                <Menu.Item key={item.key} icon={item.icon} >
+                                    <Link to={item.link}>{item.label}</Link>
+                                </Menu.Item>
+                            ))}
+                        </Menu>
+                    </Flex>
 
-                    <img src={logo} alt="logo" style={{ width: '380px', marginRight: '450px' }} /> {/* Logo */}
-                    <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" >
-                        {items.map(item => (
-                            <Menu.Item key={item.key} icon={item.icon} >
-                                <Link to={item.link}>{item.label}</Link>
-                            </Menu.Item>
-                        ))}
-                    </Menu>
                 </Header>
                 <Content
                     style={{
