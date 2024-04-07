@@ -42,26 +42,49 @@ function LiveMap() {
     const { socket, weatherData } = useSocketContext();
 
     useEffect(() => {
-        getWeatherData();
+        // getWeatherData();
+
+        const getWeatherData = async () => {
+            try {
+                const response = await axios.get("https://weather-app-backend-ry03.onrender.com/api/weather");
+                if (response.data.isSuccessful) {
+                    setWeatherData(response.data.data);
+                }
+            } catch (err) {
+                console.log(err);
+            }
+        };
+
+        const fetchWeatherInitially = async () => {
+            await getWeatherData();
+        };
+
+        fetchWeatherInitially();
+
+        const intervalId = setInterval(fetchWeatherInitially, 300000);
+
+        return () => clearInterval(intervalId);
+
+
     }, []);
 
-    useEffect(() => {
-        if (weatherData) {
-            console.log("Socket data received:", weatherData);
-            setWeatherData(weatherData);
-        }
-    }, [weatherData]);
+    // useEffect(() => {
+    //     if (weatherData) {
+    //         console.log("Socket data received:", weatherData);
+    //         setWeatherData(weatherData);
+    //     }
+    // }, [weatherData]);
 
-    const getWeatherData = async () => {
-        try {
-            const response = await axios.get("http://localhost:8080/api/v1/weather");
-            if (response.data.isSuccessful) {
-                setWeatherData(response.data.data); // Assuming response.data.data contains weather data array
-            }
-        } catch (err) {
-            console.log(err);
-        }
-    };
+    // const getWeatherData = async () => {
+    //     try {
+    //         const response = await axios.get("http://localhost:8080/api/v1/weather");
+    //         if (response.data.isSuccessful) {
+    //             setWeatherData(response.data.data); // Assuming response.data.data contains weather data array
+    //         }
+    //     } catch (err) {
+    //         console.log(err);
+    //     }
+    // };
 
     function getDistrictCoordinates(district) {
         switch (district) {
